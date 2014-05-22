@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block head %}
+  <script src="//tinymce.cachefly.net/4.0/tinymce.min.js"></script>
+  <script>
+      tinymce.init({
+        selector: "input.editable",
+        inline: true,
+        toolbar: "undo redo",
+        menubar: false,
+    });
+  </script>
+{% endblock %}
+
+
+{% block menu %}
+  <ul id="menu">
+    <li><a href="/">Home</a></li>
+    <li><a href="/theirs">他们的故事</a></li>
+    <li><a href="/ours">我们的故事</a></li>
+    <li><a href="/user">用户中心</a></li>
+    <li  class="selected"><a href="/comment">留言</a></li>
+    <li><a href="/contact">联系</a></li>
+  </ul>
+  </ul>
+{% endblock %}
+
+{% block body %}
+    <div id="site_content">      
+      <div id="content">
+        <h1>留言板</h1>
+        <form name="comment"  action="/comment" method="post" style="width:100%; height:300px">
+            <div class="form_settings">
+            <p><span>名称</span><input class="contact" type="text" name="name" value="" /></p>
+            <p><span>邮件地址</span><input class="contact" type="text" name="email" value=""/></p>
+            <p><span>信息</span><textarea class="contact textarea" rows="8" cols="50" name="message"></textarea></p>
+            <p style="padding-top: 15px"><span>&nbsp;</span><input class="submit" type="submit" name="comment_submitted" value="submit" /></p>
+            </div>
+        </form>
+    </div>
+  </div>
+{% endblock %}

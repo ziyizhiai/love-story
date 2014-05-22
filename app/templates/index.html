@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block head %}
+  <meta name="description" content="爱情故事上集" />
+  <meta name="keywords" content="爱情，清新" />
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet" type="text/css" href="static/style/style.css" title="style" />
+{% endblock %}
+
+{% block menu %}
+  <ul id="menu">
+    <li class="selected"><a href="/">Home</a></li>
+    <li><a href="/theirs">他们的故事</a></li>
+    <li><a href="/ours">我们的故事</a></li>
+    <li><a href="/user">用户中心</a></li>
+    <li><a href="/comment">留言</a></li>
+    <li><a href="/contact">联系</a></li>
+  </ul>
+  </ul>
+{% endblock %}
+
+{% block body %}
+  <div id="site_content">
+      <div id="content">
+      {% if story %}
+        <h1>{{story.title}}</h1>
+        <p>{{story.text}}</p> 
+      {% else %}
+     <div><img id='bgp' src='static/pic/home.png' style="padding-top:30px;float:right"></div>
+        <h1>爱情故事</h1>
+        <p>有没有一首歌曲，让你念念不忘？</p>
+        <p>有没有一个场景，让你历历在目？</p>
+        <p>有没有一个故事，让你刻骨铭心？</p>
+        <p></p>
+        <p>可能</p>
+        <p>从小到大，我们用很多种方法看过很多个故事</p>
+        <p>关于爱情，关于友情，关于亲情</p>
+        <p>在电影中，在漫画中，在书中</p>
+        <p>数不完</p>
+        <p></p>
+        <p>所以</p>
+        <p>一定有一首歌曲，让你念念不忘</p>
+        <p>一定有一个场景，让你历历在目</p>
+        <p>一定有一个故事，让你刻骨铭心</p>
+        <p></p>
+        <p>但是</p>
+        <p>你很可能没有自己写过故事</p>
+        <p>关于爱情</p>
+        <p>记忆是个不靠谱的东西</p>
+        <p>有些感觉过了</p>
+        <p>你就再也回味不了</p>
+        <p>趁还记得，趁还能够，趁还可以</p>
+        <p>把它写下来吧</p>
+        <p>写写自己的爱情故事</p>
+        </p> 
+      {% endif %}
+      </div>
+  </div>
+{% endblock %}

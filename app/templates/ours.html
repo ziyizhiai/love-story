@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block head %}
+  <meta name="description" content="爱情故事上集" />
+  <meta name="keywords" content="爱情，清新" />
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet" type="text/css" href="static/style/style.css" title="style" />
+  <script src="//tinymce.cachefly.net/4.0/tinymce.min.js"></script>
+	<script>
+    	tinymce.init({
+        selector: "h1.editable",
+    		inline: true,
+    		toolbar: "undo redo",
+    		menubar: false,
+		});
+		tinymce.init({
+		    selector: "div.editable",
+		    inline: true,
+		    toolbar: "undo redo",
+		    menubar: true,
+		});
+	</script>
+{% endblock %}
+
+{% block menu %}
+  <ul id="menu">
+    <li><a href="/">Home</a></li>
+    <li><a href="/theirs">他们的故事</a></li>
+    <li class="selected"><a href="/ours">我们的故事</a></li>
+    <li><a href="/user">用户中心</a></li>
+    <li><a href="/comment">留言</a></li>
+    <li><a href="/contact">联系</a></li>
+  </ul>
+{% endblock %}
+
+{% block body %}
+    <div id="site_content">
+      <div id="content">
+        <form name="ours"  action="/ours" method="post">
+          <h1 class="editable" name="title">
+            点击这里开始标题
+          </h1>
+          <div class="editable" name="content" style="width:100%;height:auto;min-height:300px;">
+            点击这里开始正文。
+          </div>
+          <div class="form_settings">
+            <p style="padding-top: 15px"><span>&nbsp;</span><input class="submit" type="submit" name="story_submitted" value="submit" /></p>
+          </div>
+        </form>
+        </div>
+    </div>
+{% endblock %}
